@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aiman's 24th Birthday Tribute | Cinematic Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;family=Montserrat:wght@100;200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "warm-orange": "#FFA600",
+                        "warm-coral": "#FF6361",
+                        "warm-pink": "#DE5A79",
+                        "warm-purple": "#BC5090",
+                        "glass-white": "rgba(255, 255, 255, 0.1)",
+                    },
+                    fontFamily: {
+                        "display": ["Cormorant Garamond", "serif"],
+                        "sans": ["Montserrat", "sans-serif"]
+                    },
+                    letterSpacing: {
+                        "ultra-wide": "0.3em",
+                        "cinematic": "0.5em"
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            html { scroll-behavior: smooth; }
+            body { 
+                background: linear-gradient(135deg, #FFF4E6 0%, #FFE5CC 50%, #FFD4A3 100%);
+                color: white;
+                overflow-x: hidden;
+            }
+            body ::selection {
+                background: rgba(255, 166, 0, 0.3);
+            }
+        }        .fluid-bg {
+            background: linear-gradient(45deg, #FFA600, #FF8531, #FF6361, #DE5A79, #BC5090, #8A508F, #58508D, #003F5C, #FFA600);
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }        .glass-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(255, 166, 0, 0.2);
+        }.tilt-card {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            transition: transform 0.5s ease;
+        }
+        .tilt-card:hover {
+            transform: rotateX(2deg) rotateY(2deg);
+        }
+        .ink-reveal {
+            background: linear-gradient(to right, white 50%, transparent 50%);
+            background-size: 200% 100%;
+            background-position: 100% 0;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: inkFlow 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation-play-state: paused;
+        }
+        .ink-trigger:hover .ink-reveal, .reveal-active .ink-reveal {
+            animation-play-state: running;
+        }
+        @keyframes inkFlow {
+            to { background-position: 0% 0; }
+        }.floating-shape {
+            filter: blur(40px);
+            opacity: 0.15;
+            z-index: 0;
+        }
+        .glass-ring {
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            backdrop-filter: blur(5px);
+        }        .star-field {
+            background: transparent;
+        }
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            transition: transform 0.3s ease-out;
+        }
+        .glow-text {
+            text-shadow: 0 0 20px rgba(255, 166, 0, 0.6), 0 0 40px rgba(255, 99, 97, 0.4);
+            transition: filter 1s ease, opacity 1s ease;
+        }.scroll-focus {
+            filter: blur(10px);
+            opacity: 0;
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .scroll-focus.in-view {
+            filter: blur(0);
+            opacity: 1;
+        }        @keyframes ripple {
+            0% { box-shadow: 0 0 0 0 rgba(255, 166, 0, 0.6); }
+            70% { box-shadow: 0 0 0 20px rgba(255, 166, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 166, 0, 0); }
+        }
+        .pulse-ripple {
+            animation: ripple 2s infinite;
+        }
+    </style>
+</head>
+<body class="font-sans">
+<section class="relative h-screen w-full flex items-center justify-center fluid-bg overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-orange-400/30 rounded-full blur-[120px] animate-pulse"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-pink-400/30 rounded-full blur-[150px]"></div>
+</div>
+<div class="glass-card relative z-10 px-12 py-16 md:px-24 md:py-20 rounded-2xl text-center max-w-4xl mx-4">
+<h1 class="font-display text-4xl md:text-6xl font-light tracking-cinematic mb-8 leading-tight text-white">
+                Hello Aiman
+</h1>
+<h2 class="font-display text-3xl md:text-5xl font-light mb-8 text-white">
+                Happy 24th Birthday to You!
+</h2>
+<div class="w-16 h-[1px] bg-white/50 mx-auto my-8"></div>
+<p class="font-display italic text-lg md:text-2xl text-white/90">
+                24 Does Sound a Little serious doesn't it ? Well We will see :|
+            </p>
+<div class="mt-12">
+<a class="inline-block transition-transform duration-500 hover:translate-y-2" href="#letter">
+<span class="material-symbols-outlined text-3xl font-light opacity-40">expand_more</span>
+</a>
+</div>
+</div>
+</section>
+<section class="relative min-h-screen w-full flex items-center justify-center py-32 px-6 bg-gradient-to-br from-blue-900 via-indigo-900 to-blue-800 overflow-hidden" id="letter">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+</div>
+<div class="tilt-card glass-card max-w-2xl w-full p-8 md:p-16 rounded-lg relative z-10 ink-trigger group" onmousemove="this.classList.add('reveal-active')">
+<div class="absolute -top-10 -left-10 w-24 h-24 border-l border-t border-white/30"></div>
+<div class="absolute -bottom-10 -right-10 w-24 h-24 border-r border-b border-white/30"></div>
+<div class="space-y-6 font-display text-lg md:text-xl leading-relaxed font-light text-white">
+<p class="italic mb-4 font-semibold text-white">Hi Aiman,</p>
+<div class="ink-reveal">
+<p class="mb-4 text-white">
+                        First of all, happy birthday! You're 24 now!
+                    </p>
+<p class="mb-4 text-white">
+                        I just want to thank you for being a constant support in my very dramatic life. Truly, thank you for being you. Last year was really rough for you, and I sincerely hope this year is kinder and brings you more peace and happiness. Things will work out eventually—and even when they don't, please remember that I'm always here for you.
+                    </p>
+<p class="mb-4 text-white">
+                        I had planned about 30 gifts for you, but then I thought I'd give them to you once I'm in Hyderabad instead. I'm still discovering you, which I guess is one of the downsides of not being your neighbour, colleague, or classmate—but I do hope to understand you more and more with time.
+                    </p>
+<p class="mb-4 text-white">
+                        Sorry for my occasional nonsense and little quirks. To the prettiest lady—happy birthday.
+                    </p>
+<p class="mb-4 text-white">
+                        Cry with me if you need to, but don't always be sad… because when you're sad, it makes me sad too.
+                    </p>
+</div>
+<div class="mt-12 pt-8 border-t border-white/30 opacity-90">
+<p class="italic text-lg text-white">With all the best Wishes,</p>
+<p class="text-3xl mt-2 tracking-widest font-medium text-white">Shubh Chintak</p>
+</div>
+</div>
+</div>
+</section>
+<section class="relative min-h-screen flex items-center justify-center py-32 px-6 bg-gradient-to-br from-teal-100 via-cyan-100 to-blue-100 overflow-hidden" id="memories">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/diagmonds.png')]"></div>
+</div>
+<div class="max-w-4xl w-full relative z-10">
+<div class="text-center mb-16 scroll-focus">
+<h4 class="text-teal-700/60 text-xs tracking-cinematic uppercase mb-4">Page Three</h4>
+<h2 class="font-display text-4xl md:text-6xl font-light mb-8 text-teal-900" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">This costs You ...</h2>
+<div class="w-24 h-[1px] bg-teal-600/40 mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+<div class="glass-card p-8 rounded-lg scroll-focus tilt-card">
+<div class="mb-4">
+<span class="material-symbols-outlined text-teal-600/80 text-4xl">favorite</span>
+</div>
+<h3 class="font-display text-2xl font-light mb-4 text-teal-900">A treat from you</h3>
+<p class="font-display text-lg font-light italic text-teal-800 leading-relaxed">I accept snacks, desserts, protein powder and emotional support!</p>
+</div>
+<div class="glass-card p-8 rounded-lg scroll-focus tilt-card">
+<div class="mb-4">
+<span class="material-symbols-outlined text-cyan-600/80 text-4xl">auto_awesome</span>
+</div>
+<h3 class="font-display text-2xl font-light mb-4 text-teal-900">Visiting me in Mumbai</h3>
+<p class="font-display text-lg font-light italic text-teal-800 leading-relaxed">no “we’ll plan someday” excuses
+</p>
+</div>
+<div class="glass-card p-8 rounded-lg scroll-focus tilt-card">
+<div class="mb-4">
+<span class="material-symbols-outlined text-blue-600/80 text-4xl">wb_twilight</span>
+</div>
+<h3 class="font-display text-2xl font-light mb-4 text-teal-900">No ghosting allowed</h3>
+<p class="font-display text-lg font-light italic text-teal-800 leading-relaxed">calls must be picked up, texts must be replied to.</p>
+</div>
+<div class="glass-card p-8 rounded-lg scroll-focus tilt-card">
+<div class="mb-4">
+<span class="material-symbols-outlined text-teal-600/80 text-4xl">spa</span>
+</div>
+<h3 class="font-display text-2xl font-light mb-4 text-teal-900">Regular therapy sessions</h3>
+<p class="font-display text-lg font-light italic text-teal-800 leading-relaxed">You traumatize me, I traumatize you.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="relative min-h-screen flex flex-col justify-center items-center py-40 overflow-hidden bg-gradient-to-br from-violet-100 via-purple-100 to-fuchsia-100">
+<div class="absolute top-1/4 left-1/4 w-64 h-64 bg-violet-400 rounded-full floating-shape animate-bounce" style="animation-duration: 8s;"></div>
+<div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-fuchsia-400 rounded-full floating-shape" style="animation-duration: 12s;"></div>
+<div class="absolute top-1/2 right-10 w-48 h-48 glass-ring opacity-30"></div>
+<div class="absolute bottom-20 left-20 w-32 h-32 glass-ring opacity-20"></div>
+<div class="relative z-10 w-full max-w-5xl px-6 space-y-64">
+<div class="text-center transform translate-x-[-10%] md:translate-x-[-20%]">
+<h4 class="text-violet-700/60 text-xs tracking-cinematic uppercase mb-8">Affirmation I</h4>
+<h3 class="font-display text-6xl md:text-9xl font-bold tracking-tighter text-violet-900" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">
+                    THINGS WILL BE BETTER<span class="block text-violet-800 font-light italic text-4xl md:text-6xl mt-2">You don't need astrotalk for that !</span>
+</h3>
+</div>
+<div class="text-center transform translate-x-[10%] md:translate-x-[20%]">
+<h4 class="text-violet-700/60 text-xs tracking-cinematic uppercase mb-8">Affirmation II</h4>
+<h3 class="font-display text-6xl md:text-9xl font-bold tracking-tighter text-violet-900" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">
+                    BADDIE BANO TUM <span class="block text-violet-800 font-light italic text-4xl md:text-6xl mt-2">Nahi tum toh random bache ko sunke overthink karne lgo</span>
+</h3>
+</div>
+</div>
+</section>
+<section class="relative min-h-screen flex items-center justify-center py-32 px-6 bg-gradient-to-br from-yellow-100 via-amber-100 to-orange-100 overflow-hidden" id="wishes">
+<div class="absolute inset-0">
+<div class="absolute top-20 left-10 w-32 h-32 bg-yellow-300/30 rounded-full blur-[60px]"></div>
+<div class="absolute bottom-20 right-10 w-40 h-40 bg-amber-300/30 rounded-full blur-[80px]"></div>
+</div>
+<div class="max-w-3xl w-full text-center relative z-10">
+<div class="mb-12 scroll-focus">
+<h4 class="text-amber-700/60 text-xs tracking-cinematic uppercase mb-4">Page Four</h4>
+<h2 class="font-display text-4xl md:text-6xl font-light mb-8 text-amber-900" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Wishes for You</h2>
+</div>
+<div class="space-y-12 font-display text-xl md:text-2xl font-light leading-relaxed text-amber-900 scroll-focus" style="text-shadow: 1px 1px 2px rgba(255,255,255,0.5);">
+<div class="glass-card p-8 md:p-12 rounded-lg">
+<p class="italic mb-4">May you find peace in the quiet moments,</p>
+<p class="italic mb-4">And joy in the unexpected ones.</p>
+<p class="italic">May you have the strength you need,</p>
+<p class="italic">Even when the world feels heavy.</p>
+</div>
+<div class="glass-card p-8 md:p-12 rounded-lg">
+<p class="italic mb-4">May you trust your own light,</p>
+<p class="italic mb-4">And never dim it for anyone.</p>
+<p class="italic">May you know that you are enough,</p>
+<p class="italic">Exactly as you are, right now.</p>
+</div>
+<div class="glass-card p-8 md:p-12 rounded-lg">
+<p class="italic mb-4">May this year bring you closer</p>
+<p class="italic mb-4">To the dreams you've been holding.</p>
+<p class="italic">And may you always remember</p>
+<p class="italic">That you are deeply, truly loved.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="relative min-h-screen flex items-center justify-center py-32 px-6 bg-gradient-to-br from-emerald-100 via-teal-100 to-cyan-100 overflow-hidden" id="reflections">
+<div class="absolute inset-0 opacity-15 pointer-events-none">
+<div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')]"></div>
+</div>
+<div class="max-w-4xl w-full relative z-10">
+<div class="text-center mb-16 scroll-focus">
+<h4 class="text-emerald-700/60 text-xs tracking-cinematic uppercase mb-4">Page Five</h4>
+<h2 class="font-display text-4xl md:text-6xl font-light mb-8 text-emerald-900" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Reflections</h2>
+<div class="w-24 h-[1px] bg-emerald-600/40 mx-auto"></div>
+</div>
+<div class="space-y-8 font-display text-lg md:text-2xl font-light leading-relaxed italic text-emerald-900 scroll-focus" style="text-shadow: 1px 1px 2px rgba(255,255,255,0.5);">
+<div class="glass-card p-10 rounded-lg border-l-4 border-emerald-500/50">
+<p class="mb-4">"In a world that often feels too loud,</p>
+<p>If I were allowed one quiet wish, it would be this: that life had introduced me to someone like you much earlier. Thank you for being exactly who you are—your kindness, your strength, your presence."</p>
+</div>
+<div class="glass-card p-10 rounded-lg border-l-4 border-teal-500/50">
+<p class="mb-4">"And if, at any point in the past, my words or actions caused you pain, I want you to know this sincerely: I am sorry. I never meant to hurt you. Sometimes, without intending to, we wound the very people we hold closest—not because we care less, but because we care so deeply"</p>
+</div>
+<div class="glass-card p-10 rounded-lg border-l-4 border-cyan-500/50">
+<p>"Twenty-four years of being you,</p>
+<p>and still, you surprise us all.</p>
+<p>Still, you grow. Still, you shine.</p>
+<p>Still, you matter more than you know.</p>
+<p>I am here for you if you need me 3am or be it 3pm I am here just a call away."</p>
+</div>
+</div>
+</div>
+</section>
+<section class="relative min-h-screen flex items-center justify-center py-20 px-6 bg-gradient-to-br from-rose-100 via-pink-100 to-fuchsia-100 overflow-hidden" id="timeline">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]"></div>
+</div>
+<div class="max-w-4xl w-full relative z-10">
+<div class="text-center mb-12 scroll-focus">
+<h4 class="text-rose-700/60 text-xs tracking-cinematic uppercase mb-4">Page Seven</h4>
+<h2 class="font-display text-4xl md:text-6xl font-light mb-6 text-rose-900" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">The Journey</h2>
+<div class="w-24 h-[1px] bg-rose-600/40 mx-auto"></div>
+</div>
+<div class="space-y-6 relative">
+<div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-rose-500/60 via-fuchsia-500/40 to-transparent transform md:-translate-x-1/2"></div>
+<div class="relative pl-16 md:pl-0 md:pr-1/2 md:w-1/2 scroll-focus">
+<div class="glass-card p-6 rounded-lg">
+<div class="absolute left-0 md:left-1/2 top-6 w-4 h-4 bg-rose-600 rounded-full border-4 border-white/80 transform md:-translate-x-1/2 -translate-x-1/2"></div>
+<h3 class="font-display text-xl font-light mb-4 text-rose-900">The Beginning</h3>
+<div class="space-y-2 font-display text-sm font-light text-rose-800">
+<p>The credit technically goes to me—</p>
+<p>because I texted you first and accidentally got to know you.</p>
+<p>But since it's your birthday, I'll be generous.</p>
+<p class="mt-3">You are genuinely a great person.</p>
+<p>Like… annoyingly great.</p>
+<p>The kind where I can't even complain properly</p>
+<p>without admitting that you're actually wonderful.</p>
+<p class="mt-3">So yes, happy birthday to you,</p>
+<p>and unfortunately for me,</p>
+<p>you deserve it.</p>
+</div>
+</div>
+</div>
+<div class="relative pl-16 md:pl-1/2 md:w-1/2 md:ml-auto scroll-focus">
+<div class="glass-card p-6 rounded-lg">
+<div class="absolute left-0 md:left-1/2 top-6 w-4 h-4 bg-fuchsia-500 rounded-full border-4 border-white/80 transform md:-translate-x-1/2 -translate-x-1/2"></div>
+<h3 class="font-display text-xl font-light mb-4 text-rose-900">The Growth</h3>
+<div class="space-y-2 font-display text-sm font-light text-rose-800">
+<p>I am really proud of the person you are.</p>
+<p>And even more proud of the person</p>
+<p>I see you becoming.</p>
+<p class="mt-3">You didn't lose yourself while growing—</p>
+<p>you chose yourself.</p>
+<p class="mt-3">And I will always be proud of who you chose to be.</p>
+<p>You are you.</p>
+<p>That matters.</p>
+</div>
+</div>
+</div>
+<div class="relative pl-16 md:pl-0 md:pr-1/2 md:w-1/2 scroll-focus">
+<div class="glass-card p-6 rounded-lg">
+<div class="absolute left-0 md:left-1/2 top-6 w-4 h-4 bg-rose-600 rounded-full border-4 border-white/80 transform md:-translate-x-1/2 -translate-x-1/2"></div>
+<h3 class="font-display text-xl font-light mb-4 text-rose-900">The Now</h3>
+<div class="space-y-2 font-display text-sm font-light text-rose-800">
+<p>I know a lot is going on right now.</p>
+<p>But I believe you'll get through this.</p>
+<p class="mt-3">I hope you find what you're looking for,</p>
+<p>and I hope it finds you soon.</p>
+<p>I hope this year you feel happier,</p>
+<p>and love yourself a little more than before.</p>
+</div>
+</div>
+</div>
+<div class="relative pl-16 md:pl-1/2 md:w-1/2 md:ml-auto scroll-focus">
+<div class="glass-card p-6 rounded-lg">
+<div class="absolute left-0 md:left-1/2 top-6 w-4 h-4 bg-fuchsia-500 rounded-full border-4 border-white/80 transform md:-translate-x-1/2 -translate-x-1/2"></div>
+<h3 class="font-display text-xl font-light mb-4 text-rose-900">The Future</h3>
+<div class="space-y-2 font-display text-sm font-light text-rose-800">
+<p>I hope you are happy.</p>
+<p>Like, genuinely-happy-not-just-smiling happy.</p>
+<p class="mt-3">Also, please be a good aunt.</p>
+<p>Do not teach illegal stuff to my children.</p>
+<p>No "don't tell your parents" energy.</p>
+<p>No chaos.</p>
+<p>Minimal trauma.</p>
+<p class="mt-3">I want to proudly say,</p>
+<p>"This is how I met your Aunt Aiman,"</p>
+<p>not whisper it like it's a crime documentary.</p>
+<p class="mt-3">But honestly…</p>
+<p>you being a responsible aunt?</p>
+<p>Yeah, I don't see that happening.</p>
+<p>And somehow,</p>
+<p>that makes the future even funnier.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="relative min-h-screen flex items-center justify-center py-20 px-6 bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 overflow-hidden" id="gratitude">
+<div class="absolute inset-0">
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-300/20 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-300/20 rounded-full blur-[100px]"></div>
+</div>
+<div class="max-w-3xl w-full text-center relative z-10">
+<div class="mb-12 scroll-focus">
+<h4 class="text-purple-700/60 text-xs tracking-cinematic uppercase mb-4">Page Eight</h4>
+<h2 class="font-display text-4xl md:text-6xl font-light mb-6 text-purple-900" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Gratitude</h2>
+<div class="w-24 h-[1px] bg-purple-600/40 mx-auto mb-8"></div>
+</div>
+<div class="space-y-10 font-display text-lg md:text-2xl font-light leading-relaxed text-purple-800 scroll-focus" style="text-shadow: 1px 1px 2px rgba(255,255,255,0.5);">
+<div class="space-y-1">
+<p>Thank you for being here</p>
+<p>in a world that often forgets how hard it is to exist.</p>
+</div>
+<div class="space-y-1">
+<p>Thank you for waking up on days</p>
+<p>when the weight of being yourself felt heavy,</p>
+<p>and choosing to stay anyway.</p>
+</div>
+<div class="space-y-1">
+<p>Thank you for the unseen battles you never named,</p>
+<p>the quiet strength no one applauded,</p>
+<p>the tears you swallowed so others could feel safe.</p>
+</div>
+<div class="space-y-1">
+<p>Thank you for the way your presence changes a room</p>
+<p>without trying to.</p>
+<p>For the way your silence can comfort,</p>
+<p>and your being alone can feel like company.</p>
+</div>
+<div class="space-y-1">
+<p>Thank you for the light you carry—</p>
+<p>not because it is flawless,</p>
+<p>but because it survived the dark.</p>
+</div>
+<div class="space-y-1">
+<p>Thank you for the kindness you offer</p>
+<p>even when the world has given you reasons not to.</p>
+<p>That choice matters more than you know.</p>
+</div>
+<div class="space-y-1">
+<p>Thank you for existing,</p>
+<p>not as an idea,</p>
+<p>not as a role,</p>
+<p>but as a living, breathing miracle</p>
+<p>who did not give up.</p>
+</div>
+<div class="mt-12 space-y-2">
+<p class="text-xl md:text-3xl font-medium italic">The world will never fully tell you this,</p>
+<p class="text-xl md:text-3xl font-medium italic">so let this be said clearly:</p>
+</div>
+<div class="mt-8 space-y-2">
+<p class="text-2xl md:text-4xl font-semibold text-purple-900">You were needed.</p>
+<p class="text-2xl md:text-4xl font-semibold text-purple-900">You are still needed.</p>
+<p class="text-2xl md:text-4xl font-semibold text-purple-900">And the fact that you are here</p>
+<p class="text-2xl md:text-4xl font-semibold text-purple-900">has already changed something forever.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="min-h-screen flex flex-col items-center justify-center py-20 px-4 bg-gradient-to-br from-amber-200 via-orange-200 to-rose-200 relative overflow-hidden">
+<div class="absolute inset-0 opacity-20">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,166,0,0.3),_transparent_70%)]"></div>
+</div>
+<div class="text-center z-10 px-4 max-w-4xl mx-auto">
+<p class="text-amber-900/80 font-display text-2xl md:text-4xl font-light mb-8 text-amber-900" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Do You Know Why I Chose So Many Colours?</p>
+<h2 class="font-display text-4xl md:text-7xl font-light tracking-wide mb-12 text-amber-900" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Because It's You</h2>
+<p class="text-amber-800/90 font-display text-xl md:text-3xl font-light italic leading-relaxed mb-20" style="text-shadow: 1px 1px 2px rgba(255,255,255,0.5);">Who Feels like seasons in a year and make people feel life is bearable! Cheers to you, Aiman!  Cheers to the best listener! Happiest Birthday!</p>
+<div class="relative">
+<button class="pulse-ripple group flex flex-col items-center justify-center w-20 h-20 rounded-full border border-amber-800/40 hover:border-amber-800/80 transition-all duration-700" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-symbols-outlined text-amber-800/70 group-hover:text-amber-900 transition-colors">north</span>
+</button>
+</div>
+</div>
+<script>
+            // This is just to toggle classes for the demo of 'scroll-focus' and 'reveal'
+            window.addEventListener('scroll', () => {
+                const elements = document.querySelectorAll('.scroll-focus');
+                elements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if(rect.top < window.innerHeight * 0.8) {
+                        el.classList.add('in-view');
+                    }
+                });
+            });
+        </script>
+<div class="absolute bottom-12 w-full text-center">
+<p class="text-[10px] tracking-[0.5em] text-amber-800/60 uppercase">Daniel · ALTENA · 2026</p>
+</div>
+</section>
+
+</body></html>
